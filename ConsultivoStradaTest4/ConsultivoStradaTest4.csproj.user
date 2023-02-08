@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DevExtremeCreateAsPartial>False</DevExtremeCreateAsPartial>
+    <DevExtremeUseLayout>True</DevExtremeUseLayout>
+    <DevExtremeSelectedDataContextName>ConsuntivoStradaleIMTContext %28ConsultivoStradaTest4.Models.CS%29</DevExtremeSelectedDataContextName>
+    <Controller_SelectedScaffolderID>DevExtremeApiControllerWithActionsScaffolder_v22.2</Controller_SelectedScaffolderID>
+    <Controller_SelectedScaffolderCategoryPath>root/DevExtreme</Controller_SelectedScaffolderCategoryPath>
+  </PropertyGroup>
+</Project>

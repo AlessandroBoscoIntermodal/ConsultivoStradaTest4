@@ -1,0 +1,43 @@
+@page
+@using ConsultivoStradaTest4.Models
+
+<h2 class="content-block">Home</h2>
+
+@(Html.DevExtreme().DataGrid<ConsultivoStradaTest4.Models.CS.AbbinamentoTrattore>()
+    .DataSource(ds => ds.Mvc()
+        .Controller("AbbinamentoTrattore")
+        .LoadAction("Get")
+        .InsertAction("Post")
+        .UpdateAction("Put")
+        .DeleteAction("Delete")
+        .Key("FkeyTrattore", "KeyDataInizio")
+    )
+    .RemoteOperations(true)
+    .Columns(columns => {
+
+        columns.AddFor(m => m.FkeyTrattore).Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("VeicoliAziendaliView").LoadAction("Get").Key("IdveicoloTarga"))
+                .DisplayExpr("IdveicoloTarga")
+                .ValueExpr("IdveicoloTarga")
+            );
+
+        columns.AddFor(m => m.FkeyAutista).Lookup(lookup => lookup
+                .DataSource(d => d.Mvc().Controller("AutistiView").LoadAction("Get").Key("IdAutista"))
+                .DisplayExpr("Nominativo")
+                .ValueExpr("IdAutista")
+            );
+
+        columns.AddFor(m => m.FkeyGestore);
+
+        columns.AddFor(m => m.DataInizio);
+
+        columns.AddFor(m => m.DataFine);
+
+        columns.AddFor(m => m.KeyDataInizio);
+    })
+    .Editing(e => e
+        .AllowAdding(true)
+        .AllowUpdating(true)
+        .AllowDeleting(true)
+    )
+)
